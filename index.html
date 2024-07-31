@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feo'ny Fianarantsoa</title>
+  </head>
+  <body>
+    <nav class="fixed top-0 w-full flex flex-row bg-indigo-950 overflow-hidden justify-around z-10">
+        <a id="nav_map" href="javascript:void(0)">Map</a>
+        <a id="nav_about" href="javascript:void(0)">About</a>
+        <a id="toggle_sound" data-muted="true" href="javascript:void(0)"></a>
+    </nav>
+    <div id="intro" class="flex flex-col text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-50  px-1 w-full h-full bg-black z-20">
+      <div class="my-auto">
+        <h1>Feo'ny Fianarantsoa</h1>
+        <div class="card">
+          <button id="start" type="button" class="outline-double bg-transparent">Explorer</button>
+        </div>
+        <p class="read-the-docs">
+          Cette experience s'apprecie sur un ordinateur <span id="icon_computer"></span> et avec un casque <span id="icon_headphones"></span>
+        </p>
+      </div>
+    </div>
+    <div id="about" class="hidden absolute w-full h-full bg-yellow-300 z-0 pt-16 px-8"> 
+      <h1>About Content</h1> 
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum illo eaque iusto, possimus saepe in non provident suscipit. Voluptates ab repellendus dolorem, quis aperiam illo rerum placeat maxime odio corporis?
+      </p>
+    </div>
+    <div id="detail" class="hidden absolute w-full h-full bg-red-300 z-0 pt-16 px-8">
+      <h1 id="detail_main_title">Detail</h1> 
+      <p id="detail_main_text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate earum eos, ducimus, a facere fuga facilis quae accusamus, quo ipsam tempora aliquam dolores corrupti non sequi magni nostrum ab sunt.
+      </p>
+    </div>
+    <div id="scene" class="w-full h-full overflow-hidden"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

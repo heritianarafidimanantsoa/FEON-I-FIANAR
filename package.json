@@ -1,0 +1,24 @@
+{
+  "name": "feony_fiana",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "draco3d": "^1.5.7",
+    "feather-icons": "^4.29.1",
+    "howler": "^2.2.4",
+    "three": "^0.163.0",
+    "troika-three-text": "^0.49.0"
+  }
+}
