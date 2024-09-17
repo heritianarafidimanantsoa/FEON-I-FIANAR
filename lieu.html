@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monuments de la Vieille Ville</title>
+    <link rel="stylesheet" href="lieu/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
+</head>
+
+<body>
+    
+    <!----------------------------MENU------------------------>
+
+    <div class="menu">
+
+        <div id="nom_lieu_menu" class="menu_gauche">Anosy</div> <!--JSON-->
+
+        <div class="menu_droite">
+            <div id="playButton4"><img class="sound play4" src="contenu_commun/sound.png" alt="picto son"></div>
+            <div id="circulaire"><a href="marche_zoma_circulaire.html">Vue 360</a></div>
+            <div id="rideau"><span class="nav-toggler">Changer de lieu</span></div>
+            <!--<div><span class="nav-toggler2 inactive">Fermer</span></div>-->
+            <div id="croix"><a href="index.html"><img class="croix" src="contenu_commun/croix.png"
+                        alt="picto croix"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!----------------------------RIDEAU------------------------>
+
+    <nav id="conteneur_menu">
+        <div class="block">
+
+            <div class="ligne1">
+                <div class="element"><a href="anosy.html"><img src="photos_menu/anosy.JPG" alt="Anosy"></a>
+                    <p>Anosy</p>
+                </div>
+                <div class="element"><a href="cathedrale.html"><img src="photos_menu/cathedrale.jpg"
+                            alt="Cathédrale Saint Nom de Jésus Ambozontany"></a>
+                    <p>Cathédrale</p>
+                </div>
+                <div class="element"><a href="circulation.html"><img src="photos_menu/circulation.JPG"
+                            alt="Circulation"></a>
+                    <p>Circulation</p>
+                </div>
+                <div class="element"><a href="enseignement.html"><img src="photos_menu/enseignement.JPG"
+                            alt="Enseignement"></a>
+                    <p>Enseignement</p>
+                </div>
+                <div class="element"><a href="escalier_telephones.html"><img src="photos_menu/escalier_telephones.JPG"
+                            alt="Escalier des téléphones"></a>
+                    <p>Escalier des téléphones</p>
+                </div>
+            </div>
+
+            <div class="ligne2">
+                <div class="element"><a href="escalier_mort_homme.html"><img src="photos_menu/escalier_mort_homme.JPG"
+                            alt="Escalier Mort-Homme"></a>
+                    <p>Escalier mort-homme</p>
+                </div>
+                <div class="element"><a href="gare.html"><img src="photos_menu/gare_fce.JPG" alt="Gare FCE"></a>
+                    <p>Gare FCE</p>
+                </div>
+                <div class="element"><a href="lapany_tanana.html"><img src="photos_menu/lapany_tanana.JPG"
+                            alt="Lapan'ny Tanana"></a>
+                    <p>Lapan'ny Tanana</p>
+                </div>
+                <div class="element"><a href="marche_zoma.html"><img src="photos_menu/zoma.jpg"
+                            alt="Marché du Zoma"></a>
+                    <p>Marché du Zoma</p>
+                </div>
+                <div class="element"><a href="monuments_ville.html"><img src="photos_menu/monuments_centre_ville.JPG"
+                            alt="Monuments de la ville"></a>
+                    <p>Monuments de la ville</p>
+                </div>
+            </div>
+
+            <div class="ligne3">
+                <div class="element"><a href="point_vue.html"><img src="photos_menu/point_vue.jpg"
+                            alt="Point de vue et rizières"></a>
+                    <p>Point de vue et rizières</p>
+                </div>
+                <div class="element"><a href="porte_vieille_ville.html"><img src="photos_menu/porte_vieille_ville.JPG"
+                            alt="Porte d'entrée de la Vieille Ville"></a>
+                    <p>Porte d’entrée de la Vieille Ville</p>
+                </div>
+                <div class="element"><a href="rova.html"><img src="photos_menu/rova.png" alt="Rova"></a>
+                    <p>Rova</p>
+                </div>
+                <div class="element"><a href="statue_vierge.html"><img src="photos_menu/statue_vierge.JPG"
+                            alt="Statue de la Vierge"></a>
+                    <p>Statue de la Vierge</p>
+                </div>
+                <div class="element"><a href="vie_estudiantine.html"><img src="photos_menu/vie_estudiantine.JPG"
+                            alt="Vie estudiantine"></a>
+                    <p>Vie estudiantine</p>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <script type="text/javascript">
+
+        const toggler = document.querySelector('.nav-toggler');
+        const navigation = document.querySelector("nav");
+
+        toggler.addEventListener("click", toggleNav);
+
+        function toggleNav() {
+            toggler.classList.toggle("active");
+            navigation.classList.toggle("active");
+        }
+
+        toggler.addEventListener("click", function () {
+            if (toggler.textContent === "Changer de lieu") {
+                toggler.textContent = "Fermer";
+            } else {
+                toggler.textContent = "Changer de lieu";
+            }
+        });
+
+    </script>
+
+
+    <!----------------------------FILTRE------------------------>
+
+    <div class="conteneur_haut">
+
+
+        <div id="filtre"></div>
+        <div class="conteneur_nom">
+            <h1 id="nom_lieu">Anosy</h1> <!--JSON-->
+        </div>
+
+        <img class="img img_fixed" id="photo_principale" src="anosy/photos/HH4A0166.JPG"
+            alt="Vue d'ensemble sur le parc et le lac d'Anosy"> <!--JSON--> <!--TEXTE-ALT-->
+
+        <div class="texte_filtre">
+            <p id="description_lieu">Anosy, située en périphérie de la ville, offre un éventail d'activités pour se
+                détendre
+                et se ressourcer loin du tumulte urbain. Que ce soit pour une journée de loisirs, un pique-nique en
+                plein air ou
+                simplement pour se ressourcer, Anosy est le lieu parfait pour créer des souvenirs mémorables et partager
+                des
+                moments privilégiés avec ces proches. Nichée dans un cadre paisible et verdoyant, les vastes jardins
+                botaniques
+                émerveillent avec leur biodiversité luxuriante, sans oublier l'espace dédié aux enfants, où les plus
+                jeunes
+                peuvent jouer en toute sécurité et s'amuser dans un environnement adapté à leurs besoins. </p>
+            <!--JSON-->
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        const img = document.querySelector('.img');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 3000) {
+                img.classList.remove('img_fixed');
+                img.classList.add('img_absolute');
+            }
+            else {
+                img.classList.add('img_fixed');
+                img.classList.remove('img_absolute');
+            }
+        });
+
+    </script>
+
+    <!----------------------------CONTENEUR PAGE------------------------>
+
+    <div class="conteneur_bas">
+
+        <!----------------------------CONTENU------------------------>
+
+        <div class="center">
+            <p id="description_bis" class="apparition invisible">Le Lorem Ipsum est simplement du faux texte
+                employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte
+                standard de
+                l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte
+                pour
+                réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est
+                aussi
+                adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans
+                les
+                années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus
+                récemment, par
+                son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p> <!--JSON-->
+        </div>
+
+
+        <script type="text/javascript">
+
+            const apparition = document.querySelector('.apparition');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 3500) {
+                    apparition.classList.remove('invisible');
+                    apparition.classList.add('visible');
+                }
+                else {
+                    apparition.classList.add('invisible');
+                    apparition.classList.remove('visible');
+                }
+            });
+
+        </script>
+
+        <!----------------------------CAROUSEL------------------------>
+
+        <div class="carousel">
+            <div><img src="contenu_commun/up.png" id="prev" class="btn" alt="faire défiler à gauche"></div>
+            <div><img src="contenu_commun/up.png" id="next" class="btn" alt="faire défiler à droite"></div>
+            <ul>
+                <li class="slide">
+                    <img src="anosy/photos/HH4A9010.JPG" id="photos_carousel" class="image-cliquable"
+                        alt="Lettres 'HELLO' posées dans l'herbe du parc">
+                    <!--JSON--> <!--TEXTE-ALT-->
+                </li>
+                <li class="slide active">
+                    <img src="anosy/photos/DSC_0406.JPG" id="photos_carousel" class="image-cliquable"
+                        alt="Lettres 'LOVE' posées dans l'herbe du parc"> <!--JSON-->
+                    <!--TEXTE-ALT-->
+                </li>
+                <li class="slide">
+                    <img src="anosy/photos/DSC_0419.JPG" id="photos_carousel" class="image-cliquable"
+                        alt="Cadre à travers duquel est visible le parc.">
+                    <!--JSON--> <!--TEXTE-ALT-->
+
+                </li>
+            </ul>
+        </div>
+
+
+        <!----------------------------POPUP IMAGE------------------------>
+
+        <!--<div class="popup-image">
+      <span>&times;</span>
+      <img src="" alt="">
+    </div>
+
+
+    <script type="text/javascript">
+
+      document.querySelectorAll(".carousel img").forEach(function (element) {
+        element.addEventListener('click', function (e) {
+          document.querySelector(".popup-image").style.display = 'block';
+          document.querySelector(".popup-image img").setAttribute('src', e.target.getAttribute('src'));
+        });
+      });
+
+      document.querySelector('.popup-image span').onclick = () => {
+        document.querySelector('.popup-image').style.display = 'none';
+      };
+
+
+    </script>-->
+
+
+        <!----------------------------QUESTION------------------------>
+
+        <div class="center question">
+            <p id="question" class="apparitionQuestion questionInvisible">A quel endroit de la ville aimez-vous vous
+                rendre ?</p>
+            <!--JSON-->
+        </div>
+
+
+        <div class="ligne1_bis">
+
+            <div class="audio1 invisible4" id="playButton1"><img class="play1" src="contenu_commun/play.png"
+                    alt="picto play">
+            </div>
+            <div class="texte1">
+                <h2 id="nom1" class="apparition2 invisible2">Otlasprie</h2> <!--JSON-->
+                <p id="citations_ecrites1" class="apparition3 invisible3">&laquo; C'est l'endroit que les touristes
+                    aimeraient visiter
+                    &raquo;</p> <!--JSON-->
+            </div>
+
+        </div>
+
+        <div class="ligne2_bis">
+            <div class="texte2">
+                <h2 id="nom2" class="apparition5 invisible5">Juliana</h2> <!--JSON-->
+                <p id="citations_ecrites2" class="apparition7 invisible7">&laquo; Tout le monde peut y aller &raquo;</p>
+                <!--JSON-->
+            </div>
+            <div class="audio2 invisible6" id="playButton2"><img class="play2" src="contenu_commun/play.png"
+                    alt="picto play">
+            </div>
+
+
+        </div>
+
+        <script type="text/javascript">
+
+            /***********************APPARITION QUESTION*************************/
+
+            const apparitionQuestion = document.querySelector('.apparitionQuestion');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 4900) {
+                    apparitionQuestion.classList.remove('questionInvisible');
+                    apparitionQuestion.classList.add('questionVisible');
+                }
+                else {
+                    apparitionQuestion.classList.add('questionInvisible');
+                    apparitionQuestion.classList.remove('questionVisible');
+                }
+            });
+
+
+            /***********************APPARITION PERSONNE 1*************************/
+
+            const apparition2 = document.querySelector('.apparition2');
+            const apparitionAudio1 = document.querySelector('.audio1');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 5300) {
+                    apparition2.classList.remove('invisible2');
+                    apparition2.classList.add('visible2');
+                    apparitionAudio1.classList.remove('invisible4');
+                    apparitionAudio1.classList.add('visible4');
+                }
+                else {
+                    apparition2.classList.add('invisible2');
+                    apparition2.classList.remove('visible2');
+                    apparitionAudio1.classList.add('invisible4');
+                    apparitionAudio1.classList.remove('visible4');
+                }
+            });
+
+            const apparition3 = document.querySelector('.apparition3');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 5350) {
+                    apparition3.classList.remove('invisible3');
+                    apparition3.classList.add('visible3');
+                }
+                else {
+                    apparition3.classList.add('invisible3');
+                    apparition3.classList.remove('visible3');
+                }
+            });
+
+
+            /***********************APPARITION PERSONNE 2*************************/
+
+            const apparition5 = document.querySelector('.apparition5');
+            const apparitionAudio2 = document.querySelector('.audio2');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 5400) {
+                    apparition5.classList.remove('invisible5');
+                    apparition5.classList.add('visible5');
+                    apparitionAudio2.classList.remove('invisible6');
+                    apparitionAudio2.classList.add('visible6');
+                }
+                else {
+                    apparition5.classList.add('invisible5');
+                    apparition5.classList.remove('visible5');
+                    apparitionAudio2.classList.add('invisible6');
+                    apparitionAudio2.classList.remove('visible6');
+                }
+            });
+
+            const apparition7 = document.querySelector('.apparition7');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 5450) {
+                    apparition7.classList.remove('invisible7');
+                    apparition7.classList.add('visible7');
+                }
+                else {
+                    apparition7.classList.add('invisible7');
+                    apparition7.classList.remove('visible7');
+                }
+            });
+
+        </script>
+
+
+        <!----------------------------IMAGE SEULE------------------------>
+
+        <section>
+            <div class="parallax_one"> <!--JSON-->
+            </div>
+        </section>
+
+
+        <!----------------------------TEXTES ADDITIONNELS------------------------>
+
+        <div class="textes_additionnels">
+            <div class="paragraphe1">
+                <p class="gauche invisibleGauche">Lorem ipsum dolor sit amet. Nam dolores maiores et cumque impedit vel
+                    dolor
+                    blanditiis cum
+                    nihil magni et dolorem debitis. Qui excepturi expedita aut fuga repellat qui expedita dolor. Aut
+                    dolor autem
+                    nam
+                    nulla fuga aut odit dolore. Ut facilis iusto ut perspiciatis iste qui sunt dolores et quaerat rerum?
+                    Eos nisi natus sed consequuntur voluptas eos quisquam neque in quam pariatur sed quia eveniet aut
+                    suscipit
+                    nihil
+                    qui iusto praesentium. Ab galisum voluptatibus eos omnis sunt et numquam amet. Aut blanditiis
+                    doloribus et
+                    sequi
+                    perferendis eos aperiam expedita.</p>
+            </div>
+
+            <div class="paragraphe2">
+                <p class="droite invisibleDroite">Lorem ipsum dolor sit amet. Nam dolores maiores et cumque impedit vel
+                    dolor
+                    blanditiis cum
+                    nihil magni et dolorem debitis. Qui excepturi expedita aut fuga repellat qui expedita dolor. Aut
+                    dolor autem
+                    nam
+                    nulla fuga aut odit dolore. Ut facilis iusto ut perspiciatis iste qui sunt dolores et quaerat rerum?
+                    Eos nisi natus sed consequuntur voluptas eos quisquam neque in quam pariatur sed quia eveniet aut
+                    suscipit
+                    nihil
+                    qui iusto praesentium. Ab galisum voluptatibus eos omnis sunt et numquam amet. Aut blanditiis
+                    doloribus et
+                    sequi
+                    perferendis eos aperiam expedita.</p>
+            </div>
+        </div>
+
+        <div class="temoignage">
+            <p class="temoignageLast invisibleLast">Autres témoignages de Fianarois</p>
+            <div class="audio3" id="playButton3"><img class="audioLast invisibleAudioLast play3"
+                    src="contenu_commun/play.png" alt="picto play">
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            const gauche = document.querySelector('.gauche');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 6800) {
+                    gauche.classList.remove('invisibleGauche');
+                    gauche.classList.add('visibleGauche');
+                }
+                else {
+                    gauche.classList.add('invisibleGauche');
+                    gauche.classList.remove('visibleGauche');
+                }
+            });
+
+            const droite = document.querySelector('.droite');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 7000) {
+                    droite.classList.remove('invisibleDroite');
+                    droite.classList.add('visibleDroite');
+                }
+                else {
+                    droite.classList.add('invisibleDroite');
+                    droite.classList.remove('visibleDroite');
+                }
+            });
+
+            const temoignage = document.querySelector('.temoignageLast');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 7500) {
+                    temoignage.classList.remove('invisibleLast');
+                    temoignage.classList.add('visibleLast');
+                }
+                else {
+                    temoignage.classList.add('invisibleLast');
+                    temoignage.classList.remove('visibleLast');
+                }
+            });
+
+            const picto = document.querySelector('.audioLast');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 7800) {
+                    picto.classList.remove('invisibleAudioLast');
+                    picto.classList.add('visibleAudioLast');
+                }
+                else {
+                    picto.classList.add('invisibleAudioLast');
+                    picto.classList.remove('visibleAudioLast');
+                }
+            });
+
+        </script>
+
+
+        <!----------------------------GALLERIE PARALLAX------------------------>
+
+        <div class="conteneur_parallax">
+            <div class="paysage" id="img1"><img src="anosy/photos/DSC_0405.JPG" alt="Sapin en bois"></div> <!--JSON-->
+            <!--TEXTE-ALT-->
+            <div class="portrait" id="img2"><img src="anosy/photos/DSC_1082.JPG" alt="Lac d'Anosy"></div> <!--JSON-->
+            <!--TEXTE-ALT-->
+            <div class="paysage" id="img3"><img src="anosy/photos/HH4A8983.JPG" alt="Allée pavée"></div> <!--JSON-->
+            <!--TEXTE-ALT-->
+            <div class="paysage" id="img4"><img src="anosy/photos/HH4A9050.JPG" alt="Jeux pour les enfants"></div>
+            <!--JSON--> <!--TEXTE-ALT-->
+            <div class="paysage" id="img5"><img src="anosy/photos/DSC_0580.JPG" alt="Vue de haut sur le parc"></div>
+            <!--JSON--> <!--TEXTE-ALT-->
+            <div class="paysage" id="img6"><img src="anosy/photos/HH4A9062.JPG" alt="Vue sur le parc d'Anosy"></div>
+            <!--JSON--> <!--TEXTE-ALT-->
+        </div>
+
+        <div class="retour_haut">
+            <a href="#">
+                <div><img src="contenu_commun/up.png" class="up upInvisible" alt="Picto vers le haut"></div>
+                <div>
+                    <p class="revenirHaut invisibleHaut">Revenir en haut</p>
+                </div>
+            </a>
+        </div>
+
+        <script type="text/javascript">
+            //let selecteurImg = [];
+
+
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+                console.log('Position de défilement : ' + scrollPosition + ' pixels');
+            });
+
+            const up = document.querySelector('.up');
+            const revenir = document.querySelector('.revenirHaut');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 12500) {
+                    up.classList.remove('upInvisible');
+                    up.classList.add('upVisible');
+                    revenir.classList.remove('invisibleHaut');
+                    revenir.classList.add('visibleHaut');
+                }
+                else {
+                    up.classList.add('upInvisible');
+                    up.classList.remove('upVisible');
+                    revenir.classList.add('invisibleHaut');
+                    revenir.classList.remove('visibleHaut');
+                }
+            });
+
+
+            /***********************FONCTION AUDIO*************************/
+
+            const playButton1 = document.getElementById('playButton1');
+            const playButton2 = document.getElementById('playButton2');
+            const playButton3 = document.getElementById('playButton3');
+            const playButton4 = document.getElementById('playButton4');
+            const soundImage1 = document.querySelector('.play1');
+            const soundImage2 = document.querySelector('.play2');
+            const soundImage3 = document.querySelector('.play3');
+            const soundImage4 = document.querySelector('.play4');
+
+            var audioElement1 = new Audio("sons/anosy-otlasprie.mp3"); /*****JSON******/
+            var audioElement2 /*****JSON******/
+            var audioElement3 /*****JSON******/
+            var audioElement4 = new Audio(""); /*****JSON******/
+
+            let isPlaying = false;
+
+            playButton1.addEventListener('click', function () {
+                if (!isPlaying) {
+                    audioElement1.play();
+                    isPlaying = true;
+                    soundImage1.src = "contenu_commun/pause.png";
+                    audioElement2.pause();
+                    audioElement3.pause();
+                    audioElement4.pause();
+                    soundImage2.src = "contenu_commun/play.png";
+                    soundImage3.src = "contenu_commun/play.png";
+                    soundImage4.src = "contenu_commun/sound.png";
+                } else {
+                    audioElement1.pause();
+                    isPlaying = false;
+                    soundImage1.src = "contenu_commun/play.png";
+                }
+            });
+
+            playButton2.addEventListener('click', function () {
+                if (!isPlaying) {
+                    audioElement2.play();
+                    isPlaying = true;
+                    soundImage2.src = "contenu_commun/pause.png";
+                    audioElement1.pause();
+                    audioElement3.pause();
+                    audioElement4.pause();
+                    soundImage1.src = "contenu_commun/play.png";
+                    soundImage3.src = "contenu_commun/play.png";
+                    soundImage4.src = "contenu_commun/sound.png";
+                } else {
+                    audioElement2.pause();
+                    isPlaying = false;
+                    soundImage2.src = "contenu_commun/play.png";
+                }
+            });
+
+            playButton3.addEventListener('click', function () {
+                if (!isPlaying) {
+                    audioElement3.play();
+                    isPlaying = true;
+                    soundImage3.src = "contenu_commun/pause.png";
+                    audioElement1.pause();
+                    audioElement2.pause();
+                    audioElement4.pause();
+                    soundImage1.src = "contenu_commun/play.png";
+                    soundImage2.src = "contenu_commun/play.png";
+                    soundImage4.src = "contenu_commun/sound.png";
+                } else {
+                    audioElement3.pause();
+                    isPlaying = false;
+                    soundImage3.src = "contenu_commun/play.png";
+                }
+            });
+
+            playButton4.addEventListener('click', function () {
+                if (!isPlaying) {
+                    audioElement4.play();
+                    isPlaying = true;
+                    soundImage4.src = "contenu_commun/pause.png";
+                    audioElement1.pause();
+                    audioElement2.pause();
+                    audioElement3.pause();
+                    soundImage1.src = "contenu_commun/play.png";
+                    soundImage2.src = "contenu_commun/play.png";
+                    soundImage3.src = "contenu_commun/play.png";
+                } else {
+                    audioElement4.pause();
+                    isPlaying = false;
+                    soundImage4.src = "contenu_commun/sound.png";
+                }
+            });
+        </script>
+
+        <!--------------------PARAMETRAGE PAGE-------------------->
+
+        <script type="text/javascript">
+            let url = location.href;
+            var idLieu = url.split("?")[1];
+
+            /***********************DONNEES JSON*************************/
+
+            document.querySelector(".ligne1").innerHTML = "";
+            document.querySelector(".ligne2").innerHTML = "";
+            document.querySelector(".ligne3").innerHTML = "";
+
+            //chargement des données JSON    
+            fetch('lieu/data.json').then(response => {
+                response.json().then(function (data) {
+                    console.log(data);
+                    // Ajoutez ici d’autres instructions utilisant la variable data 
+                    data.forEach(function (lieu, numeroLieu) {
+                        var numeroLigne = 3;
+
+                        if (numeroLieu < 10) {
+                            numeroLigne = 2;
+                        }
+                        if (numeroLieu < 5) {
+                            numeroLigne = 1;
+                        }
+                        document.querySelector(".ligne" + numeroLigne).innerHTML = document.querySelector(".ligne" + numeroLigne).innerHTML + `
+                                <div class="element">
+                                <a href="lieu.html?${lieu["id_lieu"]}"><img src="lieu/photos/${lieu["photo_principale"]}" alt="${lieu["nom_lieu_menu"]}"></a>
+                                <p>${lieu["nom_lieu_menu"]}</p>
+                                </div>`
+                        if (lieu["id_lieu"] === idLieu) {
+                            document.querySelector("title").innerHTML = lieu["nom_lieu"];
+                            document.querySelector("#nom_lieu_menu").innerHTML = lieu["nom_lieu_menu"];
+                            document.querySelector("#nom_lieu").innerHTML = lieu["nom_lieu"];
+                            document.querySelector("#photo_principale").src = "lieu/photos/" + lieu["photo_principale"];
+                            document.querySelector("#description_lieu").innerHTML = lieu["description_lieu"];
+                            document.querySelector("#description_bis").innerHTML = lieu["description_bis"];
+                            document.querySelector("#question").innerHTML = lieu["question"];
+                            document.querySelector("#nom1").innerHTML = lieu["nom_personnes"][0];
+                            document.querySelector("#nom2").innerHTML = lieu["nom_personnes"][1];
+                            document.querySelector("#citations_ecrites1").innerHTML = lieu["citations_ecrites"][0];
+                            document.querySelector("#citations_ecrites2").innerHTML = lieu["citations_ecrites"][1];
+                            //document.querySelector("#textes").innerHTML = lieu["textes"]; ajouter la balise
+                            audioElement1 = new Audio("sons/" + lieu["citations_sonores"][0]); /*****JSON******/
+                            audioElement2 = new Audio("sons/" + lieu["citations_sonores"][1]); /*****JSON******/
+                            audioElement3 = new Audio("sons/" + lieu["compilation_sonore"]); /*****JSON******/
+                            audioElement4 = new Audio("sons/" + lieu["son_ambiance"]); /*****JSON******/
+                            document.querySelector(".parallax_one").style.backgroundImage = "url(lieu/photos/" + lieu["photo_parallax"] + ")";
+                            document.querySelector(".conteneur_parallax").innerHTML = "";
+                            lieu["defilement_parallax"].forEach(function (img, i) {
+                                let selecteurImg = [];
+                                document.querySelector(".conteneur_parallax").innerHTML = document.querySelector(".conteneur_parallax").innerHTML + '<div class="paysage" id = "img' + (i + 1) + '" > <img src="lieu/photos/' + lieu["defilement_parallax"][i] + '" alt="' + lieu["texte_alt_defilement_parallax"][i] + '"></div>';
+                                selecteurImg[i] = document.querySelector('#img' + (i + 1));
+                            })
+                            document.querySelector(".carousel ul").innerHTML = "";
+                            lieu["photos_carousel"].forEach(function (img, i) {
+                                var active = "";
+                                if (i == 0) {
+                                    active = " active";
+                                }
+
+                                document.querySelector(".carousel ul").innerHTML = document.querySelector(".carousel ul").innerHTML + `<li class="slide${active}">
+                                <img src="lieu/photos/${lieu["photos_carousel"][i]}" id="photos_carousel" class="image-cliquable"
+                                alt="${lieu["texte_alt_carousel"][i]}">
+                                <!--JSON--> <!--TEXTE-ALT-->
+                                </li>`
+
+                            })
+                            const buttons = document.querySelectorAll(".btn");
+                            const slides = document.querySelectorAll(".slide");
+                            buttons.forEach((button) => {
+                                button.addEventListener("click", (e) => {
+                                    const calcNextSlide = e.target.id === "next" ? 1 : -1;
+                                    const slideActive = document.querySelector(".active");
+
+                                    newIndex = calcNextSlide + [...slides].indexOf(slideActive);
+
+                                    if (newIndex < 0) newIndex = [...slides].length - 1;
+                                    if (newIndex >= [...slides].length) newIndex = 0;
+                                    slides[newIndex].classList.add("active");
+
+                                    slideActive.classList.remove("active");
+                                });
+                            });
+
+
+
+                            /**let img1 = document.getElementById("img1");
+                            let img2 = document.getElementById("img2");
+                            let img3 = document.getElementById("img3");
+                            let img4 = document.getElementById("img4");
+                            let img5 = document.getElementById("img5");
+                            let img6 = document.getElementById("img6");
+
+                            window.addEventListener('scroll', function () {
+                                var scrollPosition = window.scrollY;
+                                console.log('Position de défilement : ' + scrollPosition + ' pixels');
+                            });**/
+
+
+                            window.addEventListener('scroll', () => {
+                                let scrollY = window.scrollY;
+
+                                if (scrollY > 8560) {
+                                    selecteurImg[0].style.top = (scrollY - 8560) * 0.25 + 'px';
+                                }
+                                if (scrollY > 8600) {
+                                    selecteurImg[1].style.top = (scrollY - 8600) * 0.1 + 'px';
+                                }
+
+                                if (scrollY > 8700) {
+                                    selecteurImg[2].style.top = (scrollY - 8700) * 0.3 + 'px';
+                                }
+
+                                if (scrollY > 8800) {
+                                    selecteurImg[3].style.top = (scrollY - 8800) * 0.1 + 'px';
+                                }
+
+                                if (scrollY > 9000) {
+                                    selecteurImg[4].style.top = (scrollY - 9000) * 0.25 + 'px';
+                                }
+
+                                if (scrollY > 9100) {
+                                    selecteurImg[5].style.top = (scrollY - 9100) * 0.1 + 'px';
+                                }
+                            });
+
+
+
+
+
+
+                        }
+                    })
+                })
+            })
+
+        </script>
+
+
+    </div>
+</body>
+
+</html>
